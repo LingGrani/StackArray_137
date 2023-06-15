@@ -11,16 +11,18 @@ public:
 	StackArray() {
 		top = -1;
 	}
-	string push(string element) {
+	void push() {
 		if (top == 4) { //step 1
 			cout << "Number of data exceeds the limit." << endl;
-			return "";
+			return;
 		}
+		cout << "Masukan Element" << endl;
+		string element;
+		getline(cin, element);
 		top++; //step 2
 		stack_array[top] = element; //step 3
 		cout << endl;
 		cout << element << " Ditambahkan(pushed)" << endl;
-		return element;
 	}
 	void pop() { 
 		if (empty()) {//step 1 pop
@@ -65,13 +67,9 @@ int main() {
 			char ch = (input.empty() ? '0' : input[0]);
 
 			switch (ch) {
-			case'1': {
-				cout << "Masukan Element" << endl;
-				string test;
-				getline(cin, test);
-				obj.push(test);
+			case'1':
+				obj.push();
 				break;
-			}
 			case'2':
 				obj.pop();
 				break;
