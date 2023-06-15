@@ -57,14 +57,15 @@ int main() {
 			cout << "3. VDisplay" << endl;
 			cout << "4. Exit" << endl;
 			cout << "\nEnter your Choise (1-4): ";
-			char ch;
-			cin >> ch;
+			string input;
+			getline(cin, input);
+			char ch = (input.empty() ? '0' : input[0]);
 
 			switch (ch) {
 			case'1':
 				cout << "Masukan Element" << endl;
 				string el;
-				cin >> el;
+				getline(cin,el);
 				obj.push(el);
 				break;
 			case'2':
