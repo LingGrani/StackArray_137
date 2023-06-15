@@ -28,6 +28,8 @@ public:
 			return; //1.b
 		}
 		cout << "\nThe popped element is: " << stack_array[top] << endl;//step 2 pop
+		top--;
+
 	}
 
 	//method for check if data is empty
@@ -40,7 +42,7 @@ public:
 			cout << "\nStack is empty." << endl;
 		}
 		else {
-			for (int top = 0; top <= 5; top++) {
+			for (int tp = 0; tp <= top; tp++) {
 				cout << stack_array[top] << endl;
 			}
 		}
@@ -49,7 +51,9 @@ public:
 
 int main() {
 	StackArray obj;
+
 	while (true) {
+		try {
 			cout << "\nMenu" << endl;
 			cout << "1. Push" << endl;
 			cout << "2. Pop" << endl;
@@ -80,5 +84,9 @@ int main() {
 				cout << "\nInvalid Option" << endl;
 				break;
 			}
+		}
+		catch (exception& e) {
+			cout << "Check for the values entered." << endl;
+		}
 	}
 }
