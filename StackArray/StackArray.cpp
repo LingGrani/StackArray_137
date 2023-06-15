@@ -50,7 +50,6 @@ public:
 int main() {
 	StackArray obj;
 	while (true) {
-		try {
 			cout << "\nMenu" << endl;
 			cout << "1. Push" << endl;
 			cout << "2. Pop" << endl;
@@ -62,12 +61,13 @@ int main() {
 			char ch = (input.empty() ? '0' : input[0]);
 
 			switch (ch) {
-			case'1':
+			case'1': {
 				cout << "Masukan Element" << endl;
-				string el;
-				getline(cin,el);
-				obj.push(el);
+				string test;
+				getline(cin, test);
+				obj.push(test);
 				break;
+			}
 			case'2':
 				obj.pop();
 				break;
@@ -80,9 +80,5 @@ int main() {
 				cout << "\nInvalid Option" << endl;
 				break;
 			}
-		}
-		catch (exception& e) {
-			cout << "Check for the values entered." << endl;
-		}
 	}
 }
