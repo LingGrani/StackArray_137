@@ -45,7 +45,7 @@ public:
 		}
 		else {
 			for (int tp = 0; tp <= top; tp++) {
-				cout << stack_array[top] << endl;
+				cout << stack_array[tp] << endl;
 			}
 		}
 	}
