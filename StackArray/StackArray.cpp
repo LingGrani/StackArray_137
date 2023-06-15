@@ -48,36 +48,32 @@ public:
 };
 
 int main() {
-	while (true){
+	StackArray obj;
+	while (true) {
 		try {
 			cout << "\nMenu" << endl;
-			cout << "\1. Add a record to the list" << endl;
-			cout << "2. Delete a record from the list" << endl;
-			cout << "3. View all record in the ascending order of roll numbers" << endl;
-			cout << "4. View  all record in the descending order of roll number" << endl;
-			cout << "5. Search for a record in the list" << endl;
-			cout << "6. Exit" << endl;
-			cout << "\nEnter your Choise (1-6): ";
+			cout << "1. Push" << endl;
+			cout << "2. Pop" << endl;
+			cout << "3. VDisplay" << endl;
+			cout << "4. Exit" << endl;
+			cout << "\nEnter your Choise (1-4): ";
 			char ch;
 			cin >> ch;
 
-			switch (ch){
+			switch (ch) {
 			case'1':
-				obj.addNode();
+				cout << "Masukan Element" << endl;
+				string el;
+				cin >> el;
+				obj.push(el);
 				break;
 			case'2':
-				obj.hapus();
+				obj.pop();
 				break;
 			case'3':
-				obj.traverse();
+				obj.display();
 				break;
 			case'4':
-				obj.revtraverse();
-				break;
-			case'5':
-				obj.searchdata();
-				break;
-			case'6':
 				return 0;
 			default:
 				cout << "\nInvalid Option" << endl;
